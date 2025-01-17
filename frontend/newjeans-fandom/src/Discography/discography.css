@@ -1,0 +1,72 @@
+:root {
+    --font-laptop: 2rem;
+}
+
+* { /*default adjustment*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.discography { /*discography adjustment*/
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(17, 37, 64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.album-slide { /*album slideshow*/
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.album-image-container { /*album image container adjustment*/
+    background-color: #4a5568;
+    border-radius: 3rem;
+}
+
+.album-image { /*album image adjustment*/
+    width: 200px;
+    height: 200px;
+    object-fit: cover;  
+    margin-bottom: 20px;
+}
+
+.album-content { /*album texts adjustment*/
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    color: #4b71b4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.album-name { /*album title adjustment*/
+    font-size: var(--font-laptop);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.album-description { /*album description adjustment*/
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.album-content audio { /*song*/
+    margin-bottom: 2rem;
+}
+
+/*react slick stle*/
+.slick-dots li button:before {
+    color: white;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: white;
+}

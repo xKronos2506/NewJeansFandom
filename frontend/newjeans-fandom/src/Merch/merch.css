@@ -1,0 +1,211 @@
+:root {
+    --gap-pc: 1rem;
+    --padding-pc: 2rem;
+    --margin-pc: 2rem;
+
+    --gap-laptop: 0.75rem;
+    --padding-laptop: 1rem;
+    --margin-laptop: 1rem;
+
+    --gap-tablet: 0.5rem;
+    --padding-tablet: 0.75rem;
+    --margin-tablet: 0.5rem;
+
+    --img-width-pc: 15rem;
+    --img-width-laptop: 10rem;
+    --img-width-tablet: 8rem;
+
+    --button-pad-pc: 1rem;
+    --button-pad-laptop: 0.75rem;
+    --button-pad-tablet: 0.5rem;
+
+    --font-pc: 1em;
+    --font-laptop: 0.85em;
+    --font-tablet: 0.75em;
+}
+
+.merchandise { /*merchandise page adjustment*/
+    width: 100%;
+    background-color: #9FA2FC;
+}
+
+.merch-cont { /*container display adjustment*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-pc);
+    padding: var(--padding-pc);
+    margin: var(--margin-pc) auto;
+}
+
+.merch { /*individual merch div block adjustment*/
+    display: flex;
+    flex-direction: row;
+    background-color: #9FA2FC;
+    border-radius: var(--font-pc);
+    overflow: hidden;
+    box-shadow: -10px -15px 10px rgba(137, 217, 217, 0.5);
+}
+
+.img-left { /*image container adjustment */
+    width: var(--img-width-pc);
+    height: auto;
+}
+
+.img-left img { /*image adjustment*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-right { /*text adjustment*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.text-right h2 { /*text font adjustment*/
+    margin-bottom: var(--margin-pc);
+    font-size: var(--font-pc);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.text-right button { /*btton adjustment*/
+    background-color: #6E96DB;
+    border: none;
+    color: white;
+    padding: var(--button-pad-pc);  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: var(--font-pc);
+    margin: 0 var(--margin-pc);
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.text-right button:hover { /*button effect*/
+    background-color: #7DFACE;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+/*media query*/
+
+/*laptop*/
+@media screen and (max-width: 1024px) {
+    .merchandise {
+        width: 90%;
+    }
+
+    .merch-cont {
+        gap: var(--gap-laptop);
+    }
+    .merch {
+        gap: var(--gap-laptop);
+        margin: var(--margin-laptop);
+        overflow: hidden;
+    }
+
+    .img-left {
+        height: auto;
+    }
+
+    .img-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .text-right {
+        padding: var(--padding-laptop);
+    }
+
+    .text-right h2 {
+        font-size:  var(--font-laptop);
+    }
+
+    .text-right button {
+        padding: var(--button-pad-laptop);
+        font-size: var(--font-laptop);
+        margin: 0 var(--margin-laptop);
+    }
+}
+
+/*tablet*/
+@media screen and (max-width: 720px) {
+    .merchandise {
+        width: 100%;
+    }
+
+    .merch-cont {
+        grid-template-columns: 1fr;
+        gap: var(--gap-tablet);
+        padding: var(--gap-tablet);
+        margin: var(--margin-tablet) auto;
+    }
+
+    .merch {
+        margin: var(--margin-tablet) 0;
+    }
+
+    .img-left {
+        width: 50%;
+        height: 200px;
+    }
+
+    .img-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .text-right {
+        padding: var(--padding-tablet);
+    }
+
+    .text-right h2 {
+        font-size: calc(var(--font-laptop) * 0.9);
+        margin-bottom: var(--margin-laptop);
+    }
+
+    .text-right button {
+        padding: calc(var(--button-pad-laptop) * 0.8);
+        font-size: calc(var(--font-laptop) * 0.9);
+        margin: var(--margin-laptop) 0 0 0;
+        width: 100%;
+    }
+}
+
+/*phone*/
+@media screen and (max-width: 360px) {
+    .merchandise {
+        width: 100%;
+    }
+
+    .img-left {
+        width: 40%;
+        height: auto;
+    }
+
+    .img-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .text-right {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .text-right button {
+        width: 100%;
+        text-align: center;
+    }
+}

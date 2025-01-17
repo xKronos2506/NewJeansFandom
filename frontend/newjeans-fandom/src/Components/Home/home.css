@@ -1,0 +1,91 @@
+:root {
+  --padding-pc: 2rem;
+  --padding-laptop: 1rem;
+}
+
+* { /*default option*/
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+/*home container adjustment*/
+.home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+  position: relative;
+  overflow: hidden;
+}
+
+.video-bg { /*video bg adjustment*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+
+}
+
+.right-content { /*text content, setting its position, dimension, design and opacity*/
+  width: 40%;
+  max-width: 50%; 
+  height: auto;
+  background-color: rgba(200, 200, 200, 0.3);
+  border-radius: 1rem;
+
+
+  padding: var(--padding-pc) ;
+  margin-bottom: 10rem;
+  margin-right: 2rem;
+
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  line-height: 1.5;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+
+.typewriter-text { /*text font size*/
+  font-size: 1.5em;
+}
+
+/*media query*/
+
+/*laptop*/
+
+@media screen and (max-width: 1024px) {
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+
+  .video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed; /* Fix the video to cover the entire viewport */
+  }
+  .right-content {
+    width: 80%;
+    max-width: 400px; /* Limit the maximum width for better readability */
+    margin: 0 auto; /* Center horizontally */
+    padding: var(--padding-laptop);
+    position: static; /* Remove absolute positioning */
+    transform: none; /* Remove any transforms */
+    top: auto; /* Reset top value */
+    right: auto; /* Reset right value */
+    bottom: auto; /* Reset bottom value */
+  }
+
+}

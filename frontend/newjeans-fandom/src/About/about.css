@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
+:root {
+  --padding-pc: 2rem;
+  --padding-laptop: 1rem;
+  --padding-tablet: 0.5rem;
+
+
+  --font-size-pc: 3em;
+  --font-size-laptop: 2em;
+  --font-size-tablet: 1.5em;
+  --font-size-phone: 1em;
+}
+
+* { /*default setting*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.about { /*about main adjustment*/
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--padding-pc) .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  background-color: #6baafc; 
+}
+
+.about-container { /*container adjustment*/
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: var(--padding-pc);
+  width: 100%; /*maximizes width */
+  justify-content: center; /*center content */
+}
+
+.text-left,
+.video-right {
+  display: flex;
+  background-color: #1b2f55; 
+}
+
+.text-left { /*adjustment for the text*/
+  flex-direction: column;
+  width: 60%;
+  height: auto;
+  padding: var(--padding-pc);
+  color: white;
+  border-radius: 1rem;
+}
+
+.text-left h1 { /*font size adjustment*/
+  padding: var(--padding-pc) 0;
+  font-family: "Jersey 15", serif;
+  font-size: var(--font-size-pc);
+}
+
+.video-right video { /*video adjustment*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Media query */
+
+/*laptop*/
+@media screen and (max-width: 1024px) {
+  .about {
+    padding: var(--padding-laptop) 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .about-container {
+    flex-direction: column; /* Stack elements vertically for smaller screens */
+    align-items: center; /* Center align items */
+
+
+  }
+
+  .text-left {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .text-left h1 {
+    font-size: 2rem;
+
+
+  }
+
+  .Typewriter {
+    font-size: 1rem;
+  }
+}
+/*phone*/
+@media screen and (max-width: 360px) {
+  .about {
+    padding: var(--padding-tablet);
+
+  }
+
+  .text-left, .video-right {
+    width: 100%;
+    height: 100%;
+
+
+  }
+
+  .text-left {
+    font-size: var(--font-size-phone);
+    padding: var(--padding-tablet);
+  }
+
+
+}

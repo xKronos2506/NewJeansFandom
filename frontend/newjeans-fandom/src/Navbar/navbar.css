@@ -1,0 +1,137 @@
+:root {
+    --bg-color-hover: #6E96DB;
+
+    --navbar-logo-width-pc: 11rem;
+    --navbar-logo-width-laptop: 10rem;
+    --navbar-logo-width-tablet: 8rem;
+    --navbar-logo-width-phone: 6rem;
+
+    --navbar-font-pc: 2em;
+    --navbar-font-laptop: 1em;
+    --navbar-font-tablet: 0.75em;
+    --navbar-font-phone: 0.5em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation bar */
+nav {
+    padding: 0.5rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #A3D7F0; /* Add a default background color */
+}
+
+.nav-logo {
+    width: var(--navbar-logo-width-pc);
+    padding: 0 2rem;
+}
+
+/* Navigation bar text */
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0.25rem 1rem;
+    font-size: var(--navbar-font-pc);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul li a {
+    display: inline-block;
+    background-color: transparent;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    border-radius: 1rem;
+}
+
+/* Hover animation */
+nav ul li a:hover {
+    background-color: var(--bg-color-hover);
+    transform: scale(1.1);
+}
+
+/* Navigation bar change color for other pages */
+.other-nav {
+    background-color: #A3D7F0;
+}
+
+/* Media queries */
+/* Laptop */
+@media screen and (max-width: 1024px) {
+    .nav-logo {
+        width: var(--navbar-logo-width-laptop);
+    }
+
+    nav ul li {
+        font-size: var(--navbar-font-laptop);
+        margin: 0.25rem 1rem;
+    }
+
+    nav ul li a {
+        padding: 15px;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 720px) {
+    .nav-logo {
+        width: var(--navbar-logo-width-tablet);
+    }
+
+    nav ul li {
+        font-size: var(--navbar-font-tablet);
+        margin: 0.25rem 0.75rem;
+    }
+
+    nav ul li a {
+        padding: 10px;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 360px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-logo {
+        width: var(--navbar-logo-width-phone);
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        font-size: var(--navbar-font-phone);
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+    }
+}
